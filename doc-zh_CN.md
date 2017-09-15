@@ -1,7 +1,7 @@
 [Document in English](README.md)
 
 **目录**
-[TOC]<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [概述](#概述)
 - [功能](#功能)
@@ -55,13 +55,13 @@ iotcli 支持下列功能：
 下载完成后，解压缩它，并直接在你的机器上运行 “iotcli” 工具。
 
 ### Raspberry PI
-选择 iotcli_v1.0.0_Linux-ARMv7.tar.gz
+下载 [iotcli_v1.0.0_Linux-ARMv7.tar.gz][dl-arm]
 ### Linux
-选择 iotcli_v1.0.0_Linux-amd64.tar.gz
+下载 [iotcli_v1.0.0_Linux-amd64.tar.gz][dl-linux]
 ### macOS
-选择 iotcli_v1.0.0_macOS-amd64.tar.gz
+下载 [iotcli_v1.0.0_macOS-amd64.tar.gz][dl-mac]
 ### Windows
-选择 iotcli_v1.0.0_Windows-amd64.zip
+下载 [iotcli_v1.0.0_Windows-amd64.zip][dl-win]
 
 ## 添加到 PATH 中（可选）
 您可将 “iotcli” 移动到系统环境变量 PATH 的某个目录下，这样，就可以在命令行
@@ -263,3 +263,7 @@ Built on:	2017/09/14 15:25:59
 # Licence
 
 [1]: https://bitbucket.org/linkernetworks/iot-server
+[dl-linux]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.0/iotcli_v1.0.0_Linux-amd64.tar.gz
+[dl-arm]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.0/iotcli_v1.0.0_Linux-ARMv7.tar.gz
+[dl-mac]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.0/iotcli_v1.0.0_macOS-amd64.tar.gz
+[dl-win]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.0/iotcli_v1.0.0_Windows-amd64.zip
