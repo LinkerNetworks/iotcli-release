@@ -1,4 +1,4 @@
-[中文文档](docs-zh_CN.md)
+[中文文档](doc-zh_CN.md)
 
 **Table of Contents**
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
@@ -7,7 +7,7 @@
 - [Functions](#functions)
 - [Quick Start](#quick-start)
 	- [Download and Install](#download-and-install)
-		- [Raspiberry PI](#raspiberry-pi)
+		- [Raspberry PI](#raspberry-pi)
 		- [Linux](#linux)
 		- [macOS](#macos)
 		- [Windows](#windows)
@@ -31,7 +31,7 @@
 <!-- /TOC -->
 
 # Summary
-iotcli is a command line tool to interact with Linker iot-server, which is the
+iotcli is a command line tool to interact with Linker [iot-server][1], which is the
 back-end program supporting the IoT platform.
 
 iotcli is written in Go and can run on multiple platforms (Linux, Windows, macOS and ARM).
@@ -56,7 +56,7 @@ Build image and push image is only available on ARM platform (RPI) currently.
 Click the GitHub 'Release' page and download the prebuilt binary for your platform,
 unarchive it and execute 'iotcli' directly on your machine.
 
-### Raspiberry PI
+### Raspberry PI
 iotcli_v1.0.0_Linux-ARMv7.tar.gz
 ### Linux
 iotcli_v1.0.0_Linux-amd64.tar.gz
@@ -66,7 +66,7 @@ iotcli_v1.0.0_macOS-amd64.tar.gz
 iotcli_v1.0.0_Windows-amd64.zip
 
 ## Move to PATH (optional)
-You can move 'iotcli' under one of system PATH folder for your convenience, in that way,
+You can move 'iotcli' under one of system environment PATH folder for your convenience, in that way,
 you can access iotcli anywhere in the console.
 
 # Usage Manual
@@ -97,16 +97,22 @@ Flags:
 Use "iotcli [command] --help" for more information about a command.
 ```
 
+Subcommands like 'build' are standalone modules of iotcli. You can use 'iotcli <subcommand> --help' to display help for subcommands.
+
 ## Login to IoT server
-You need to login to IoT server before you run 'iotcli projects', 'iotcli devices' and
+You may need to login to IoT server before you run 'iotcli projects', 'iotcli devices' and
 'iotcli push'.
 
 The Email and password you will input are same ones you input on Linker IoT webpage.
 
-The login session is valid in 1 hour. You need to login again when session
-expired.
+The login session is valid in 1 hour. You need to login again when session expired.
+
+The login session contains your email address and secure token, iotcli has encrypted them and saved on your local machine safely.
 
 ## Login to default IoT server
+The default IoT server address is `app.dcos.iotfactory.io:3000`.
+Run the following command to login:
+
 `./iotcli login`
 
 Success output:
@@ -126,6 +132,8 @@ Login error: invalid email or password
 ```
 
 ## Login to specific IoT server
+If you know another IoT server address and wanna login, set it on the argument.
+
 `./iotcli login 192.168.41.16:3000`
 
 ```sh
@@ -165,7 +173,7 @@ someone/nginx	latest	No	None	4 weeks ago
 ```
 
 ## Build RPI Application Image
-This command works only on Raspberry PI (RPI, ARMv7) devices.
+> This command works only on Raspberry PI (RPI, ARMv7) devices.
 
 This command is a wrapper for `docker build`, so you need to firstly enter a
 directory containing the RPI application source codes and a Dockerfile.
@@ -200,16 +208,16 @@ Use 'iotcli push dht11' to push image to IoT Registry
 A temporary image called 'dht11' is built.
 
 ## Push RPI Application Image to IoT Registry
-This command works only on Raspberry PI (RPI, ARMv7) devices.
+> This command works only on Raspberry PI (RPI, ARMv7) devices.
 
 This command is a wrapper for `docker tag` and `docker push`.
-It can help you tag image and push automatically, which means you don't need to
+It can help you tag image and push image to Linker IoT Registry automatically, which means you don't need to
 run something like `docker tag dht11 <iot-registry-address>/<username>/dht11` manually.
 
-When you run push command, it will do the following:
+When you run `iotcli push <image>` command, it will do the following:
 1. Run 'docker tag' to rename image (from short name to full name registry address and username).
 2. Try to login to IoT registry with username and password from the login session;
-If user is not logged in, or if the token has expired, it will print some hint and stop.
+If you are not logged in, or if the token has expired, iotcli will print some hint and stop.
 3. Run 'docker push' to upload the image.
 4. Run 'docker rmi' to unplug the temporary image (the short name one).
 
@@ -223,12 +231,12 @@ For example:
 
 Success output:
 ```sh
-========> Executing [docker tag dht11 app.dcos.iotfactory.io:5000/yzhang3/dht11]
-========> Executing [docker login -u yzhang3 -p ****** app.dcos.iotfactory.io:5000]
+========> Executing [docker tag dht11 app.dcos.iotfactory.io:5000/yourname/dht11]
+========> Executing [docker login -u yourname -p ****** app.dcos.iotfactory.io:5000]
 WARNING: login credentials saved in /root/.docker/config.json
 Login Succeeded
-========> Executing [docker push app.dcos.iotfactory.io:5000/yzhang3/dht11]
-The push refers to a repository [app.dcos.iotfactory.io:5000/yzhang3/dht11]
+========> Executing [docker push app.dcos.iotfactory.io:5000/yourname/dht11]
+The push refers to a repository [app.dcos.iotfactory.io:5000/yourname/dht11]
 9f3cc2957c8f: Preparing
 fb576ba69e79: Preparing
 ...
@@ -258,9 +266,9 @@ Built on:	2017/09/14 15:25:59
 # Feedback
 If you are familiar with GitHub issue tracking flow, try to open an issue!
 
-Or contact us directly.
-
 # Contact
 
 
 # Licence
+
+[1]: https://bitbucket.org/linkernetworks/iot-server
