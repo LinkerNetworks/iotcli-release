@@ -45,7 +45,7 @@ iotcli 支持下列功能：
 * 上传 RPI 应用镜像
 * 从 IoT Docker 镜像仓库中搜索镜像（公有的和登录用户的）
 
-构建镜像和上传镜像两个功能现在只在 ARM 平台上可用。
+构建镜像和上传镜像两个功能现在只在安装有 Docker 的 RPI（ARM v7）上可用。
 
 > RPI 是树莓派（Raspberry PI）的缩写。
 
@@ -254,6 +254,27 @@ Built on:	2017/09/14 15:25:59
 ```
 
 # 常见问题
+# FAQ
+## 1. 执行 “iotcli push \<image\>” 时候，登录出错
+
+**错误信息:**
+```
+# iotcli push dht11
+========> Executing [docker tag dht11 app.dcos.iotfactory.io:5000/someone/dht11]
+========> Executing [docker login -u someone -p ****** app.dcos.iotfactory.io:5000]
+Email: EOF
+wait for cmd error: exit status 1
+login to registry error: exit status 1
+========> Executing [docker push app.dcos.iotfactory.io:5000/someone/dht11]
+(skip)
+```
+
+**原因:**
+Docker 登录失败，因为所用 Docker 版本不支持这样的语法： `docker login -u someone -p ****** app.dcos.iotfactory.io:5000`
+
+**解决方案:**
+
+用 `docker version` 检查 Docker 版本，如果版本低于 1.11, 请升级到 v1.12 以上 (推荐使用 v1.12.1)。
 
 # 反馈
 如果对 GitHub Issue tracking 流程比较熟悉，可以直接创建一个 Issue ！

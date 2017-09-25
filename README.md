@@ -46,7 +46,7 @@ iotcli supports the following functions:
 * Push RPI application image
 * Search RPI app images from IoT Docker Registry(both public and logged-in user's images)
 
-Build image and push image is only available on ARM platform (RPI) currently.
+Build image and push image is only currently available on RPI (ARM v7) with Docker installed.
 
 > RPI is abbr for Raspberry PI
 
@@ -262,6 +262,26 @@ Built on:	2017/09/14 15:25:59
 ```
 
 # FAQ
+## 1. login error when execute 'iotcli push \<image\>'
+
+**Error Message:**
+```
+# iotcli push dht11
+========> Executing [docker tag dht11 app.dcos.iotfactory.io:5000/someone/dht11]
+========> Executing [docker login -u someone -p ****** app.dcos.iotfactory.io:5000]
+Email: EOF
+wait for cmd error: exit status 1
+login to registry error: exit status 1
+========> Executing [docker push app.dcos.iotfactory.io:5000/someone/dht11]
+(skip)
+```
+
+**Reason:**
+Docker login failed, because it do not support syntax like `docker login -u someone -p ****** app.dcos.iotfactory.io:5000`
+
+**Solution:**
+
+Check `docker version` and if it is < 1.11, upgrade to docker v1.12+ (v1.12.1 recommended).
 
 # Feedback
 If you are familiar with GitHub issue tracking flow, try to open an issue!
