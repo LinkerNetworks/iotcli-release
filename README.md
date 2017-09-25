@@ -57,13 +57,13 @@ Click the GitHub 'Release' page and download the prebuilt binary for your platfo
 unarchive it and execute 'iotcli' directly on your machine.
 
 ### Raspberry PI
-Download [iotcli_v1.0.0_Linux-ARMv7.tar.gz][dl-arm]
+Download [iotcli_v1.0.1_Linux-ARMv7.tar.gz][dl-arm]
 ### Linux
-Download [iotcli_v1.0.0_Linux-amd64.tar.gz][dl-linux]
+Download [iotcli_v1.0.1_Linux-amd64.tar.gz][dl-linux]
 ### macOS
-Download [iotcli_v1.0.0_macOS-amd64.tar.gz][dl-mac]
+Download [iotcli_v1.0.1_macOS-amd64.tar.gz][dl-mac]
 ### Windows
-Download [iotcli_v1.0.0_Windows-amd64.zip][dl-win]
+Download [iotcli_v1.0.1_Windows-amd64.zip][dl-win]
 
 ## Move to PATH (optional)
 You can move 'iotcli' under one of system environment $PATH folder, for example `/usr/local/bin` or `/bin` on Unix-like systems. In this way,
@@ -272,7 +272,7 @@ If you are familiar with GitHub issue tracking flow, try to open an issue!
 # Licence
 
 [1]: https://bitbucket.org/linkernetworks/iot-server
-[dl-linux]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.0/iotcli_v1.0.0_Linux-amd64.tar.gz
-[dl-arm]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.0/iotcli_v1.0.0_Linux-ARMv7.tar.gz
-[dl-mac]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.0/iotcli_v1.0.0_macOS-amd64.tar.gz
-[dl-win]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.0/iotcli_v1.0.0_Windows-amd64.zip
+[dl-linux]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.1/iotcli_v1.0.1_Linux-amd64.tar.gz
+[dl-arm]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.1/iotcli_v1.0.1_Linux-ARMv7.tar.gz
+[dl-mac]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.1/iotcli_v1.0.1_macOS-amd64.tar.gz
+[dl-win]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.1/iotcli_v1.0.1_Windows-amd64.zip
