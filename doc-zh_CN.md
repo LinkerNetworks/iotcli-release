@@ -64,8 +64,8 @@ iotcli 支持下列功能：
 下载 [iotcli_v1.0.0_Windows-amd64.zip][dl-win]
 
 ## 添加到 PATH 中（可选）
-您可将 “iotcli” 移动到系统环境变量 PATH 的某个目录下，这样，就可以在命令行
-中任意位置运行 iotcli。
+您可将 “iotcli” 移动到系统环境变量 $PATH 的某个目录下，比如类 Unix 系统的 `/usr/local/bin` 或 `/bin` 目录。这样的话，就可以在命令行
+中任意位置运行 iotcli。否则需要使用 `./iotcli` 去执行它。
 
 # 使用手册
 ## 显示帮助

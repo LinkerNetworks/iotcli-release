@@ -66,8 +66,8 @@ Download [iotcli_v1.0.0_macOS-amd64.tar.gz][dl-mac]
 Download [iotcli_v1.0.0_Windows-amd64.zip][dl-win]
 
 ## Move to PATH (optional)
-You can move 'iotcli' under one of system environment PATH folder for your convenience, in that way,
-you can access iotcli anywhere in the console.
+You can move 'iotcli' under one of system environment $PATH folder, for example `/usr/local/bin` or `/bin` on Unix-like systems. In this way,
+you can access iotcli anywhere in the console. Otherwise, you need to use `./iotcli` to execute it.
 
 # Usage Manual
 
