@@ -55,13 +55,13 @@ iotcli 支持下列功能：
 下载完成后，解压缩它，并直接在你的机器上运行 “iotcli” 工具。
 
 ### Raspberry PI
-下载 [iotcli_v1.0.1_Linux-ARMv7.tar.gz][dl-arm]
+下载 [iotcli_v1.0.2_Linux-ARMv7.tar.gz][dl-arm]
 ### Linux
-下载 [iotcli_v1.0.1_Linux-amd64.tar.gz][dl-linux]
+下载 [iotcli_v1.0.2_Linux-amd64.tar.gz][dl-linux]
 ### macOS
-下载 [iotcli_v1.0.1_macOS-amd64.tar.gz][dl-mac]
+下载 [iotcli_v1.0.2_macOS-amd64.tar.gz][dl-mac]
 ### Windows
-下载 [iotcli_v1.0.1_Windows-amd64.zip][dl-win]
+下载 [iotcli_v1.0.2_Windows-amd64.zip][dl-win]
 
 ## 添加到 PATH 中（可选）
 您可将 “iotcli” 移动到系统环境变量 $PATH 的某个目录下，比如类 Unix 系统的 `/usr/local/bin` 或 `/bin` 目录。这样的话，就可以在命令行
@@ -284,7 +284,7 @@ Docker 登录失败，因为所用 Docker 版本不支持这样的语法： `doc
 # Licence
 
 [1]: https://bitbucket.org/linkernetworks/iot-server
-[dl-linux]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.1/iotcli_v1.0.1_Linux-amd64.tar.gz
-[dl-arm]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.1/iotcli_v1.0.1_Linux-ARMv7.tar.gz
-[dl-mac]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.1/iotcli_v1.0.1_macOS-amd64.tar.gz
-[dl-win]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.1/iotcli_v1.0.1_Windows-amd64.zip
+[dl-linux]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.2/iotcli_v1.0.2_Linux-amd64.tar.gz
+[dl-arm]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.2/iotcli_v1.0.2_Linux-ARMv7.tar.gz
+[dl-mac]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.2/iotcli_v1.0.2_macOS-amd64.tar.gz
+[dl-win]: https://github.com/LinkerNetworks/iotcli-release/releases/download/v1.0.2/iotcli_v1.0.2_Windows-amd64.zip
